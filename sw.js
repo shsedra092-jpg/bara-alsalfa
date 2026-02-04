@@ -1,4 +1,4 @@
-const CACHE_NAME = "bara-alsalfa-v1";
+const CACHE_NAME = "bara-alsalfa-v2";
 const ASSETS = ["./", "./index.html", "./manifest.json", "./app.js"];
 
 self.addEventListener("install", (event) => {
