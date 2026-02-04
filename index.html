@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>برا السالفة</title>
+  <link rel="manifest" href="manifest.json">
+  <style>
+    body { font-family: Arial; padding: 16px; max-width: 560px; margin: 0 auto; }
+    h1 { margin: 10px 0; }
+    .card { border: 1px solid #ddd; border-radius: 14px; padding: 14px; margin-top: 12px; }
+    input, textarea, select { width: 100%; padding: 10px; font-size: 16px; margin-top: 8px; }
+    button { width: 100%; padding: 12px; font-size: 18px; margin-top: 10px; }
+    .row { display: flex; gap: 10px; }
+    .row button { width: 50%; }
+    .muted { opacity: .7; font-size: 14px; }
+    .big { font-size: 26px; margin: 10px 0; text-align: center; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <h1>برا السالفة 🎭</h1>
+  <div class="muted">تلعبوها على موبايل واحد: كل لاعب بيشوف دوره لحاله وبعدين يمرّر الجهاز.</div>
+
+  <!-- شاشة الإعداد -->
+  <div id="screen-setup" class="card">
+    <div class="muted">أسماء اللاعبين (كل اسم بسطر)</div>
+    <textarea id="players" rows="6" placeholder="أحمد
+سارة
+مريم
+علي"></textarea>
+
+    <div class="muted" style="margin-top:10px;">السوالف (كل سالفة بسطر)</div>
+    <textarea id="topics" rows="6" placeholder="بيتزا
+سيارة
+قطار
+موبايل"></textarea>
+
+    <button id="start">ابدأ اللعبة</button>
+  </div>
+
+  <!-- شاشة كشف الدور -->
+  <div id="screen-reveal" class="card hidden">
+    <div class="muted" id="reveal-title">دور اللاعب</div>
+    <div class="big" id="reveal-name"></div>
+
+    <button id="show-role">أظهر دوري 👀</button>
+
+    <div id="role-box" class="card hidden">
+      <div class="big" id="role-text"></div>
+      <div class="muted" id="topic-text"></div>
+      <button id="next-player">مرّر للجاي ➡️</button>
+    </div>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
